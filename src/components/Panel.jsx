@@ -6,15 +6,15 @@ export function Panel() {
 
     return (
     <>
-    <Navbar bg="dark" variant="dark">
+    <Navbar className='panel' variant="dark">
         <Container className="justify-content-center gap-3">
             <img 
             src={spotifyLogo}
             alt='spotify-logo'
-            width='50'
-            height='50'
+            width='70'
+            height='70'
             />
-            <h1 className='text-light fst-italic'>Spotify Jammming</h1>
+            <h1 className='text-light title fst-italic'>Spotify Jammming</h1>
         </Container>
       </Navbar>
     </>

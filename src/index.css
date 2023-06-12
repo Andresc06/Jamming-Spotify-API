@@ -4,31 +4,122 @@ body {
   font-family: 'KoHo', sans-serif;
 }
 
+.panel {
+  height: 10vh;
+  background-color: #000;
+}
+
+.search-bar {
+  width: 50%;
+  font-size: 2.2rem;
+}
+
+.search-btn {
+  font-size: 2rem;
+}
+
+.background {
+  background: url('./assets/images/wallpaper.jpg') no-repeat fixed;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}
+
 .card {
   color: #fff;
   flex-direction: row;
-  background: #1B2631;
-  width: 30vw;
-  height: 10vh;
-  border-bottom: solid #000 2px;
+  background: transparent;
+  border: solid #000 3px;
+  border-top: none;
   border-radius: 0;
   padding-right: 10px;
 }
+
 .card img {
-  width: fit-content;
+  width: 100px;
+  height: auto;
 }
 
 .card p {
-  font-size: 12px;
+  font-size: 90%;
+}
+
+.changeName {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.changeName input {
+  width: fit-content;
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  font-weight: 600;
+}
+
+.changeName input:focus {
+  background-color: transparent;
+  color: #fff;
+  font-weight: 600;
+}
+
+.changeName button {
+  font-size: 14px;
+  padding: 0;
+  font-weight: 600;
+  width: 20%;
+}
+
+.tracks .list-name {
+  padding: 20px;
+  border-bottom: solid #000 3px;
 }
 
 .card .h5 {
-  font-size: 14px;
+  font-size: 90%;
   font-weight: 600;
 }
 
 .tracks {
-  background-color: #1B2631;
+  background-color: rgba(10, 0, 35, 0.9);
+  max-height: 800px;
+  overflow:auto;
+  width: 500px;
+  margin-top: 50px;
+}
+
+.logout {
+  padding: 10px 20px;
+  border-radius: 15px;
+  font-size: 20px;
+  box-shadow: none;
+  color: #fff;
+  font-weight: 600;
+  border: #000 2px;
+  background-color:	#FF0000;
+}
+
+.login {
+  padding: 10px 20px;
+  border-radius: 15px;
+  font-size: 20px;
+  box-shadow: none;
+  color: #fff;
+  font-weight: 600;
+  border: #000 2px;
+  text-decoration: none;
+}
+
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  font-size: 45px;
 }
 
 .card .btn {
@@ -42,4 +133,24 @@ body {
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 1.5rem;
+}
+
+@media (max-width: 768px) {
+
+  .lists {
+    padding: 2rem;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .search-bar {
+    width: 80%;
+    font-size: 1.5rem;
+  }
+  
+  .search-btn {
+    font-size: 1.3rem;
+  }
 }
