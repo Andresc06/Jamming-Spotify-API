@@ -69,7 +69,7 @@ const updatePlaylist = async (token, playlist_id, newName) => {
 const getQueryResult = async (token, query) => {
     
     try {
-        const data = await fetch(`https://api.spotify.com/v1/search?q=${query}&type=track&limit=8`, {
+        const data = await fetch(`https://api.spotify.com/v1/search?q=${query}&type=track&limit=16`, {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`,

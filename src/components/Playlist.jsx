@@ -55,8 +55,8 @@ export function Playlist({ playlist, token, songList }) {
               {song.artists.map((artist) => `${artist.name}${" "}`)}
             </Card.Text>
           </Card.Body>
-          <Button variant="danger" onClick={clickHandler} value={idx}>
-            Remove
+          <Button variant="danger" className="pe-4 ps-4" onClick={clickHandler} value={idx}>
+            -
           </Button>
         </Card>
       ))}
