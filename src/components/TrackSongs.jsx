@@ -28,7 +28,7 @@ export function TrackSongs({ songList }) {
               {song.artists.map((artist) => `${artist.name}${' '}`)}
             </Card.Text>
           </Card.Body>
-          <Button variant="success" onClick={clickHandler} key={idx} value={song.id}>Add</Button>
+          <Button variant="success" className="pe-4 ps-4" onClick={clickHandler} key={idx} value={song.id}>+</Button>
         </Card>
       ))}
     </div>
