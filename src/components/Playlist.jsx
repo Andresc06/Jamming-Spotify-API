@@ -4,11 +4,19 @@ import { useContext } from "react";
 import { addPlaylist, createPlaylist } from '../utils/tokenHandler';
 
 export function Playlist({ playlist, token, songList }) {
-  const { setPlaylist } = useContext(SongsContext);
+  const { setPlaylist, setShowUserPlaylist, showUserPlaylist } = useContext(SongsContext);
 
   const clickHandler = (e) => {
     const index = e.target.value;
     const selectedSong = playlist[index];
+    let currentTrackSongs = Array.from(document.getElementById('results').children);
+    for (const deleted of currentTrackSongs) {
+      let button = deleted.children[2];
+      if(button.value === selectedSong.id) {
+        button.removeAttribute('disabled');
+      }
+    }
+    //deleted.removeAttribute('disabled');
     setPlaylist((current) =>
       current.filter((song) => song.id !== selectedSong.id)
     );
@@ -23,6 +31,7 @@ export function Playlist({ playlist, token, songList }) {
     const newPlaylist = await createPlaylist(token, title);
     const response = await addPlaylist(token, newPlaylist.id, playlist);
     setPlaylist([]);
+    setShowUserPlaylist(!showUserPlaylist);
     return response;
   }
 

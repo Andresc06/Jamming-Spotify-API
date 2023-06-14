@@ -10,7 +10,7 @@ export function SearchBar({token}) {
     const onSubmitHandler = async (e) => {
         e.preventDefault();
         const query = e.target[0].value;
-        if(token === '') return alert('Please login to Spotify');
+        if(!localStorage.getItem('token')) return alert('Please login to Spotify');
         const resultQuery = await getQueryResult(token, query);
         let list = resultQuery.tracks.items;
         setSongList(list);

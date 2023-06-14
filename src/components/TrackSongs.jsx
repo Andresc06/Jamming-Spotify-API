@@ -8,16 +8,17 @@ export function TrackSongs({ songList }) {
     const {playlist, setPlaylist} = useContext(SongsContext);
 
     const clickHandler = (e) => {
-        const index = e.target.value;
-        const song = songList[index];
+        const id = e.target.value;
+        let song = songList.filter(song => song.id === id);
+        song = song[0];
+        e.target.setAttribute('disabled', '')
         if(!playlist.find(elem => elem.id === song.id)) {
-          songList.splice(index, 1);
           return setPlaylist([...playlist, song]);
         };
     }
 
   return (
-    <div className="tracks">
+    <div className="tracks" id="results">
       {songList.map((song, idx) => (
         <Card key={idx}>
           <Card.Img variant="top" className='d-none d-lg-block d-xl-block d-xxl-block' src={song.album.images[1].url} />
@@ -27,7 +28,7 @@ export function TrackSongs({ songList }) {
               {song.artists.map((artist) => `${artist.name}${' '}`)}
             </Card.Text>
           </Card.Body>
-          <Button variant="success" onClick={clickHandler} key={idx} value={idx}>Add</Button>
+          <Button variant="success" onClick={clickHandler} key={idx} value={song.id}>Add</Button>
         </Card>
       ))}
     </div>

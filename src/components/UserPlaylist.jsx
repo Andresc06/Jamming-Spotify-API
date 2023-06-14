@@ -24,7 +24,7 @@ export function UserPlaylist({ token, ownPlaylist }) {
             /></Card.Title>
             </Card.Body>
             
-            <Button variant="warning search-btn" type='submit' value={idx}>Change Name</Button>
+            <Button variant="warning search-btn" className='m-2' type='submit' value={idx}>Change Name</Button>
           </Form>
         </Card>
       ))}

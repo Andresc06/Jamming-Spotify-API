@@ -52,7 +52,8 @@ function App() {
 
   const logout = () => {
     setToken("")
-    window.localStorage.removeItem("token")
+    window.localStorage.removeItem("token");
+    setShowUserPlaylist(false);
   }
 
   const clickHandler = () => {
@@ -73,7 +74,7 @@ function App() {
       {playlist.length ? <Playlist playlist={playlist} songList={songList} token={token}/>: null}
       </div>: null}
       <div className='lists'>
-      {showUserPlaylist ? <div><UserPlaylist ownPlaylist={ownPlaylist} token={token}/><button className='login bg-danger' onClick={()=>setShowUserPlaylist(!showUserPlaylist)}>Hide User's Playlists</button></div>
+      {showUserPlaylist ? <div><UserPlaylist ownPlaylist={ownPlaylist} token={token}/><button className='login bg-danger m-3' onClick={()=>setShowUserPlaylist(!showUserPlaylist)}>Hide User's Playlists</button></div>
       : <button className='login bg-primary' onClick={clickHandler}>Show User's Playlists</button>}
       </div>
     </SongsContext.Provider>
