@@ -22,7 +22,7 @@ function App() {
   let scope = 'user-read-private user-read-email playlist-modify-public'
 
   let url = `https://accounts.spotify.com/authorize?response_type=token&client_id=${config.CLIENT_KEY}`;
-  url += `&scope=${scope}&redirect_uri=${'https://jamming-spotify-api.vercel.app'}`;
+  url += `&scope=${scope}&redirect_uri=${'https://jamming-spotify.vercel.app'}`;
   url += `&state=${state}`;
 
   useEffect(() => {
