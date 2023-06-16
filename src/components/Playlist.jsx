@@ -31,7 +31,7 @@ export function Playlist({ playlist, token, songList }) {
     const newPlaylist = await createPlaylist(token, title);
     const response = await addPlaylist(token, newPlaylist.id, playlist);
     setPlaylist([]);
-    setShowUserPlaylist(!showUserPlaylist);
+    setShowUserPlaylist(false);
     return response;
   }
 
